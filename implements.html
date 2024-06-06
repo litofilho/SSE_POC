@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Test SSE</title>
+</head>
+<body>
+  <h1>Server-Sent Events Test</h1>
+  <div id="messages"></div>
+
+  <script>
+    // Substitua a URL abaixo pela URL do seu endpoint SSE
+    const eventSource = new EventSource('https://localhost:3000/sse');
+
+    eventSource.onopen = function(event) {
+      console.log('Connection to SSE opened.');
+    };
+
+    eventSource.onmessage = function(event) {
+      console.log('Message from SSE:', event.data);
+    };
+
+    eventSource.onerror = function(event) {
+      console.error('Error occurred:', event);
+    };
+  </script>
+</body>
+</html>
