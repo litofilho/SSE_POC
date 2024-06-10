@@ -10,7 +10,7 @@
 
   <script>
     // Substitua a URL abaixo pela URL do seu endpoint SSE
-    const eventSource = new EventSource('https://localhost:3000/sse');
+    const eventSource = new EventSource('http://localhost:3000/sse');
 
     eventSource.onopen = function(event) {
       console.log('Connection to SSE opened.');
